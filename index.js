@@ -10,7 +10,7 @@ function saveToCrudCrud(event){
         description,
         category,
     }
-    axios.post("https://crudcrud.com/api/36ae3d7dde8d4f2aabb18cbe8948198a/appointmentData" , myObj)
+    axios.post("https://crudcrud.com/api/cb4254ee7c784136b96c1967f8366b3a/appointmentData" , myObj)
     .then((response) =>{
         showNewExpenseOnScreen(response.data)
     })
@@ -23,7 +23,7 @@ function saveToCrudCrud(event){
 // retrieving data from crud 
 
 window.addEventListener("DOMContentLoaded", ()=>{
-    axios.get("https://crudcrud.com/api/36ae3d7dde8d4f2aabb18cbe8948198a/appointmentData")
+    axios.get("https://crudcrud.com/api/cb4254ee7c784136b96c1967f8366b3a/appointmentData")
     .then((response)=>{
         console.log(response);
         for(var i=0; i<response.data.length; i++){
@@ -57,13 +57,12 @@ function editExpenseDetails(descriptionId,expenseAmount,category,userId){
     document.getElementById('description').value = descriptionId;
     document.getElementById('expenseamount').value = expenseAmount;
     document.getElementById('category').value = category;
-
     deleteExpense(userId);  
 }
 
 // delete expense 
 function deleteExpense(userId){
-    axios.delete(`https://crudcrud.com/api/36ae3d7dde8d4f2aabb18cbe8948198a/appointmentData/${userId}`)
+    axios.delete(`https://crudcrud.com/api/cb4254ee7c784136b96c1967f8366b3a/appointmentData/${userId}`)
     .then((response)=>{
         removeExpenseFromScreen(userId , response)
     })
