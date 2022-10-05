@@ -10,6 +10,8 @@ function saveToCrudCrud(event){
         description,
         category,
     }
+        
+    }
     axios.post("https://crudcrud.com/api/cb4254ee7c784136b96c1967f8366b3a/appointmentData" , myObj)
     .then((response) =>{
         showNewExpenseOnScreen(response.data)
@@ -18,7 +20,7 @@ function saveToCrudCrud(event){
         document.body.innerHTML=document.body.innerHTML+"<h4> Something went wrong </h4>"
         console.log(err);
     })
-}
+
 
 // retrieving data from crud 
 
